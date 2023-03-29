@@ -58,11 +58,11 @@ const colors = [
 ];
 
 
-/**
+/***
  * Selects a random color from the colors array. 
  * Applies it to the background-color of the <body> tag.
  *
- */
+ **/
 
 function getRandomColor() {
   // Code to select random quote from array
@@ -74,12 +74,12 @@ function getRandomColor() {
 };
 
 
-/**
+/***
  * Selects a random quote object from the quotes array.
  * 
  * @returns {object} Random object from the quotes array.
  * 
- */
+ **/
 
 function getRandomQuote() {
   // Code to select random quote from array
@@ -90,12 +90,12 @@ function getRandomQuote() {
 };
 
 
-/**
+/***
  * Generates HTML snippet for the random quote from the getRandomQuote function.  
  * Prints the snippet to the document at #quote-box.
  * Also runs the getRandomColor function to change background color.
  * 
- */
+ **/
 
 function printQuote() {
   // Code to print the quote
