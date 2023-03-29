@@ -48,10 +48,37 @@ let quotes = [
 ];
 
 
+// array of background colors
+const colors = [
+  "darkseagreen",
+  "skyblue",
+  "lightsalmon",
+  "lightpink",
+  "indianred"
+];
+
+
 /**
- * Generates a random number between 0 and length of quotes array, uses that number to randomly select an object from the quotes array.
+ * Selects a random color from the colors array. 
+ * Applies it to the background-color of the <body> tag.
+ *
+ */
+
+function getRandomColor() {
+  // Code to select random quote from array
+  let randomNumber = Math.floor(Math.random() * colors.length);
+  let randomColor = colors[randomNumber];
+ 
+  const bgColor = document.querySelector('body');
+  bgColor.style.backgroundColor = randomColor;
+};
+
+
+/**
+ * Selects a random quote object from the quotes array.
  * 
- * @returns {[string]} Random object from the quotes array.
+ * @returns {object} Random object from the quotes array.
+ * 
  */
 
 function getRandomQuote() {
@@ -64,9 +91,10 @@ function getRandomQuote() {
 
 
 /**
- * Generates HTML snippet using the random object from the quotes array and displays it to the page.  
- *
- * @returns {string} Prints HTML snippet of random quote with properties to the document at #quote-box.
+ * Generates HTML snippet for the random quote from the getRandomQuote function.  
+ * Prints the snippet to the document at #quote-box.
+ * Also runs the getRandomColor function to change background color.
+ * 
  */
 
 function printQuote() {
@@ -100,9 +128,15 @@ function printQuote() {
 
   // print the HTML snippet to the page
   document.getElementById('quote-box').innerHTML = quote_HTML;
+
+  // change background to random colors
+  getRandomColor();
 };
 
 printQuote();
+
+// automatically refresh quote and background color on page every 12 seconds
+setInterval(printQuote, 12000);
 
 
 /***
